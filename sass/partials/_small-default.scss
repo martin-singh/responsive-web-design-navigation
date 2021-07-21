@@ -4,41 +4,66 @@ html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
 /*  apply a natural box layout model to all elements  */
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-/* BODY  */
+//--------------- BODY ---------------
 body {
 	font-family: $defaultFont;
 	font-size: 16px;
 }
 
 
-/* HEADER  */
+//--------------- HEADER ---------------
 header {
+	margin-top: 44px;
 	h1 {display: none;}
 	img {padding: 1rem 0 .5rem 2%; display: block;}
 } // end header
 
 
-/* NAVigation  */
+//--------------- NAVIGATION ---------------
+nav {
+	background-color: $menuColor;
+	position: absolute;
+	top: 0;
+	width: 100%;
 
+	button {
+		background-image: url("../../images/menuIconWhite.png");
+		background-color: rgba(0, 0, 0, 0.1);
+		background-repeat: no-repeat;
+		background-size: 86%;
+		background-position: center center;
+		border: 1px solid rgba(0, 0, 0, 0.2);
+		border-radius: 10px;
+		width: 72px;
+		height: 32px;
+	} // end button
 
+	ul li.active a {
+		background-color: $primaryColor;
+	} // end active
 
+	ul li a {
+		display: block;
+		padding: .7rem 2%;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+		color: #fff;
+		text-decoration: none;
+	} // end anchors
 
+	ul li a:hover {
+		background-color: darken($menuColor, 10%);
+	}
 
+	ul li ul li a {
+		padding-left: 8%;
+	} // end nested anchors
 
+	ul.closed { // generated and used by the JS
+		display: none;
+	}
+} // end nav
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* MAIN  */
+//--------------- MAIN ---------------
 main {
 	padding: 1rem 0;
 	h1 {font-size: 2.5rem; color: $secondaryColor; padding-left: 2%;}
@@ -57,14 +82,14 @@ main {
 	.box span {display: block; font-size: 1rem; line-height: 120%;}
 } // end main
 
-/* FOOTER  */
+//--------------- FOOTER ---------------
 footer {
 	color: $primaryColor;
 	padding: 2rem 0;
 	text-align: center;
 }
 
-/*----- Clearfix: Force an Element not to collapse -----*/
+//--------------- Clearfix: Force an Element not to collapse ---------------
 .clearfix:after {
   content: "";
   display: table;

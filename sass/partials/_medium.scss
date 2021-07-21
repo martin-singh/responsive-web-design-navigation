@@ -1,27 +1,64 @@
-/* NAVigation  */
+//--------------- NAViGATION ---------------
+nav {
+	position: relative;
+
+	button {
+		display: none;
+	} // end button
+
+	ul.closed {
+		display: block;
+	}
+
+	ul {
+		margin-left: 2%;
+	}
+
+	ul li {
+		float: left;
+	}
+
+	ul li a {
+		border: none;
+		border-right: 1px solid rgba(0, 0, 0, 0.2);
+		padding: .7rem .9rem;
+		transition: background 0.3s linear;
+		-webkit-transition: background 0.3s linear;
+		-moz-transition: background 0.3s linear;
+	} // end anchors
+
+	ul li a:hover {
+		background-color: darken($menuColor, 10%);
+	}
+
+	ul li a span {
+		display: none;
+	} // end span
+
+	ul li ul {
+		position: absolute;
+		left: -999em;
+		width: 10rem;
+		background-color: lighten($menuColor, 10%);
+		z-index: 99;
+	} // end nested ul
+
+	ul li:hover ul {
+		left: auto;
+	} // end nested ul
+
+	ul li ul li {
+		float: none;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	} // end nested li
 
 
+} // end nav
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* HEADER  */
+//--------------- HEADER ---------------
 header {margin-top: 0;}
 
-/* MAIN  */
+//--------------- MAIN ---------------
 main {
 	h1 {font-size: 5rem;}
 	.box {font-size: 2rem;}
