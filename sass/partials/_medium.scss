@@ -1,58 +1,6 @@
-//--------------- HEADER ---------------
-header {
-	margin-top: 2.75rem;
-} // end header
 
-//--------------- NAViGATION ---------------
-a.hamburgerOpen, 
-a.hamburgerClose {
-	display: none;
-}
 
-nav {
-	position: absolute;
-	top: 0;
-	height: auto;
-	// new stuff
-	ul {
-		margin-left: 2%;
-		border-left: 1px solid rgba(0,0,0,0.2);
-	}
-	ul li {
-		float: left;
-	}
-	ul li a { 
-		border:none; // undo small screen
-		border-right: 1px solid rgba(0,0,0,0.2);
-		padding: .7em .9em;
-		background: none;
-		font-size: .9em;
-		// transition
-		transition: color 0.3s linear;
-		-webkit-transition: color 0.3s linear;
-		-moz-transition: color 0.3s linear;
-	}
-	ul li a span {display: none;}
-	ul li a:hover {background: darken($menuColor, 5%);}
-	
-	ul li ul { /*rules for the sub menu items*/
-		position: absolute;
-		left: -999em; /* pushes the menu way off to the side */
-		width: 10em;
-		background-color: lighten($menuColor, 10%);
-		z-index:99;
-	}
-	ul li:hover ul { /* this displays the menus as drop downs  */
-	   	left: auto;
-	 	margin-left: 0;
-   	} // end hover
- 	ul li ul li { /* overides the float and line from the parent ul */
-		float: none;
-		border-right: none;
-	}
-} // end nav
-
-//--------------- MAIN ---------------
+/* MAIN  */
 main {
 	h1 {font-size: 5rem;}
 	.box {font-size: 2rem;}

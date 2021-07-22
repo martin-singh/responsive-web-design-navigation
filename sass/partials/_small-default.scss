@@ -4,19 +4,26 @@ html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
 /*  apply a natural box layout model to all elements  */
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-//--------------- BODY ---------------
+/* BODY  */
 body {
 	font-family: $defaultFont;
 	font-size: 16px;
 }
 
-//--------------- HEADER ---------------
+
+/* HEADER  */
 header {
 	h1 {display: none;}
 	img {padding: 1rem 0 .5rem 2%; display: block;}
+	border-bottom:solid 1px $primaryColor;
 } // end header
 
-//--------------- MAIN ---------------
+
+
+
+
+
+/* MAIN  */
 main {
 	padding: 1rem 0;
 	h1 {font-size: 2.5rem; color: $secondaryColor; padding-left: 2%;}
@@ -35,62 +42,14 @@ main {
 	.box span {display: block; font-size: 1rem; line-height: 120%;}
 } // end main
 
-//--------------- FOOTER ---------------
+/* FOOTER  */
 footer {
-	grid-area: myFooter;
 	color: $primaryColor;
 	padding: 2rem 0;
 	text-align: center;
 }
 
-//--------------- NAVIGATION ---------------
-div.smallNavBar {
-	background-color: $menuColor;
-}
-
-.hamburgerIcon {
-	display: block;
-	width: 7rem;
-	height: 2.7rem;
-	background-color: $secondaryColor;
-	background-repeat: no-repeat;
-	background-position: 2vw center;
-}
-
-.hamburgerOpen {
-	@extend .hamburgerIcon;
-	background-image: url("../../images/menuOpenWhite.png");
-}
-
-.hamburgerClose {
-	@extend .hamburgerIcon;
-	background-image: url("../../images/menuCloseWhite.png");
-}
-
-nav {
-	height: 100vh;
-	width: 100%;
-	background-color: $menuColor;
-
-	ul li a {
-		display: block;
-		border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-		padding: .6rem 2%;
-		width: 100%;
-		color: #fff;
-		text-decoration: none;
-	}
-	ul li.active a {
-		background-color: $primaryColor;
-	}
-	ul li a:hover {background: darken($menuColor,5%);}
-
-	ul li ul li a {
-		padding-left: 8%;
-	}
-} // end nav
-
-//--------------- Clearfix: Force an Element not to collapse ---------------
+/*----- Clearfix: Force an Element not to collapse -----*/
 .clearfix:after {
   content: "";
   display: table;
