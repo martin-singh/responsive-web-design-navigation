@@ -8,123 +8,16 @@ html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
 body {
 	font-family: $defaultFont;
 	font-size: 16px;
-	display: grid;
-	grid-template-rows: auto;
-	grid-template-areas: 
-		"myNavigation"
-		"myHeader"
-		"myContent"
-		"myFooter";
 }
 
 //--------------- HEADER ---------------
 header {
-	grid-area: myHeader;
 	h1 {display: none;}
 	img {padding: 1rem 0 .5rem 2%; display: block;}
 } // end header
 
-//********** INDEX.HTML V1 **********
-/*header {
-	margin-top: 44px;
-	h1 {display: none;}
-	img {padding: 1rem 0 .5rem 2%; display: block;}
-} // end header*/
-
-
-//--------------- NAVIGATION ---------------
-nav {
-	grid-area: myNavigation;
-	background-color: $menuColor;
-
-	button {
-		margin: 3px 2%;
-		border: 1px solid rgba(0, 0, 0, 0.3);
-		border-radius: 5px;
-		background-color: rgba(0, 0, 0, 0.2);
-		color: #fff;
-		font-size: 1.5rem;
-		width: 3.5rem;
-	}
-
-	ul {
-		overflow: hidden;
-	}
-
-	ul li a {
-		display: block;
-		border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-		padding: .6rem 2%;
-		width: 100%;
-		color: #fff;
-		text-decoration: none;
-	}
-	ul li ul li a {
-		padding-left: 8%;
-	} // nested anchors
-	ul li.active > a {
-		background-color: #000;
-	}
-	ul li a:hover {
-		background-color: darken($menuColor, 10%);
-	}
-
-	ul.closed {max-height: 0;}
-	ul.open {
-		max-height: 31rem;
-		transition: max-height 0.5s;
-		-webkit-transition: max-height 0.5s;
-		-moz-transition: max-height 0.5s;
-	}
-} // end nav
-
-//********** INDEX.HTML V1 **********
-/*nav {
-	background-color: $menuColor;
-	position: absolute;
-	top: 0;
-	width: 100%;
-
-	button {
-		background-image: url("../../images/menuIconWhite.png");
-		background-color: rgba(0, 0, 0, 0.1);
-		background-repeat: no-repeat;
-		background-size: 86%;
-		background-position: center center;
-		border: 1px solid rgba(0, 0, 0, 0.2);
-		border-radius: 10px;
-		width: 72px;
-		height: 32px;
-	} // end button
-
-	ul li.active a {
-		background-color: $primaryColor;
-	} // end active
-
-	ul li a {
-		display: block;
-		padding: .7rem 2%;
-		border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-		color: #fff;
-		text-decoration: none;
-	} // end anchors
-
-	ul li a:hover {
-		background-color: darken($menuColor, 10%);
-	}
-
-	ul li ul li a {
-		padding-left: 8%;
-	} // end nested anchors
-
-	ul.closed { // generated and used by the JS
-		display: none;
-	}
-} // end nav */
-
 //--------------- MAIN ---------------
 main {
-	grid-area: myContent;
 	padding: 1rem 0;
 	h1 {font-size: 2.5rem; color: $secondaryColor; padding-left: 2%;}
 	figure.w100 img {width: 100%;}
@@ -149,6 +42,53 @@ footer {
 	padding: 2rem 0;
 	text-align: center;
 }
+
+//--------------- NAVIGATION ---------------
+div.smallNavBar {
+	background-color: $menuColor;
+}
+
+.hamburgerIcon {
+	display: block;
+	width: 7rem;
+	height: 2.7rem;
+	background-color: $secondaryColor;
+	background-repeat: no-repeat;
+	background-position: 2vw center;
+}
+
+.hamburgerOpen {
+	@extend .hamburgerIcon;
+	background-image: url("../../images/menuOpenWhite.png");
+}
+
+.hamburgerClose {
+	@extend .hamburgerIcon;
+	background-image: url("../../images/menuCloseWhite.png");
+}
+
+nav {
+	height: 100vh;
+	width: 100%;
+	background-color: $menuColor;
+
+	ul li a {
+		display: block;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+		padding: .6rem 2%;
+		width: 100%;
+		color: #fff;
+		text-decoration: none;
+	}
+	ul li.active a {
+		background-color: $primaryColor;
+	}
+	ul li a:hover {background: darken($menuColor,5%);}
+
+	ul li ul li a {
+		padding-left: 8%;
+	}
+} // end nav
 
 //--------------- Clearfix: Force an Element not to collapse ---------------
 .clearfix:after {

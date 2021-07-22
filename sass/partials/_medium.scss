@@ -1,18 +1,18 @@
-//--------------- BODY ---------------
-body {
-	grid-template-areas: 
-		"myHeader"
-		"myNavigation"
-		"myContent"
-		"myFooter";
-}
+//--------------- HEADER ---------------
+header {
+	margin-top: 2.75rem;
+} // end header
 
 //--------------- NAViGATION ---------------
+a.hamburgerOpen, 
+a.hamburgerClose {
+	display: none;
+}
+
 nav {
-	// undo small screen
-	button {display: none;}
-	ul.closed {max-height: 31rem;}
-    
+	position: absolute;
+	top: 0;
+	height: auto;
 	// new stuff
 	ul {
 		margin-left: 2%;
@@ -25,88 +25,32 @@ nav {
 		border:none; // undo small screen
 		border-right: 1px solid rgba(0,0,0,0.2);
 		padding: .7em .9em;
+		background: none;
 		font-size: .9em;
+		// transition
+		transition: color 0.3s linear;
+		-webkit-transition: color 0.3s linear;
+		-moz-transition: color 0.3s linear;
 	}
-	ul li a:hover {background: darken($menuColor,10%);}
 	ul li a span {display: none;}
+	ul li a:hover {background: darken($menuColor, 5%);}
 	
-	// rules for the sub menu items
-	ul li ul {
-        position: absolute;
-        left: -999em; // pushes the menu way off to the side
-        width: 10em;
-		border: none;
-        background-color: lighten($menuColor, 10%);
+	ul li ul { /*rules for the sub menu items*/
+		position: absolute;
+		left: -999em; /* pushes the menu way off to the side */
+		width: 10em;
+		background-color: lighten($menuColor, 10%);
+		z-index:99;
 	}
-    
-	// overides the float and line from the parent ul
- 	ul li ul li { float: none;}
-	ul li ul li a {border: none; border-bottom: 1px solid rgba(0,0,0,0.2); }
-    
-    // this displays the menus as drop downs
- 	ul li:hover ul { 
-		margin-left: 0;
-		left: auto;
+	ul li:hover ul { /* this displays the menus as drop downs  */
+	   	left: auto;
+	 	margin-left: 0;
+   	} // end hover
+ 	ul li ul li { /* overides the float and line from the parent ul */
+		float: none;
+		border-right: none;
 	}
 } // end nav
-
-//********** INDEX.HTML V1 **********
-/*nav {
-	position: relative;
-
-	button {
-		display: none;
-	} // end button
-
-	ul.closed {
-		display: block;
-	}
-
-	ul {
-		margin-left: 2%;
-	}
-
-	ul li {
-		float: left;
-	}
-
-	ul li a {
-		border: none;
-		border-right: 1px solid rgba(0, 0, 0, 0.2);
-		padding: .7rem .9rem;
-		transition: background 0.3s linear;
-		-webkit-transition: background 0.3s linear;
-		-moz-transition: background 0.3s linear;
-	} // end anchors
-
-	ul li a:hover {
-		background-color: darken($menuColor, 10%);
-	}
-
-	ul li a span {
-		display: none;
-	} // end span
-
-	ul li ul {
-		position: absolute;
-		left: -999em;
-		width: 10rem;
-		background-color: lighten($menuColor, 10%);
-		z-index: 99;
-	} // end nested ul
-
-	ul li:hover ul {
-		left: auto;
-	} // end nested ul
-
-	ul li ul li {
-		float: none;
-		border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-	} // end nested li
-} // end nav */
-
-//--------------- HEADER ---------------
-header {margin-top: 0;}
 
 //--------------- MAIN ---------------
 main {

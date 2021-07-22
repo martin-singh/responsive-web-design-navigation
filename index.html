@@ -11,35 +11,16 @@
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link href="css/styles.css" type="text/css" rel="stylesheet">
 </head>
-<body>
+<body id="top">
+    <div class="smallNavBar">
+        <a href="#footerLinks" class="hamburgerOpen"></a>
+    </div>
+
 <!-- HEADER STARTS HERE -->
 	<header>
    		<img src="images/logo.png" alt="">
     	<h1>Jet Away Vacations</h1>
     </header>
-    
-<!-- NAV STARTS HERE -->
-	<nav class="clearfix">
-		<button id="hamburgerBtn">&#9776;</button>
-   		<ul id="primaryNav" class="closed">
-			<li class="active"><a href="index.html"><span>CURRENT </span>DEALS</a></li>
-				<li><a href="#"><span>POPULAR </span>DESTINATIONS</a>
-				<ul>
-					<li><a href="index.html">Asia</a></li>
-					<li><a href="index.html">Caribbean</a></li>
-					<li><a href="index.html">Central America</a></li>
-					<li><a href="index.html">Europe</a></li>
-				</ul>
-			</li>
-			<li><a href="#"><span>FAVORITE </span>RESORTS</a>
-				<ul>
-					<li><a href="index.html">Hotel Maroma</a></li>
-					<li><a href="index.html">Atlantis</a></li>
-				</ul>
-			</li>
-			<li><a href="index.html"><span>AWESOME </span>CRUISES</a></li>
-		</ul>
-	</nav>
     
 <!-- MAIN STARTS HERE -->
 	<main>
@@ -59,8 +40,30 @@
     <footer>
     	<p>Jet Away Vacations &bull; Template built for Pluralsight by Paul Cheney</p>
     </footer>
-    
-<!-- PHONE MENU HIDER -->
-	<script src="js/menuToggle.js"></script>
+
+<!-- NAV STARTS HERE -->
+	<nav id="footerLinks" class="clearfix">
+        <div>
+            <a class="hamburgerClose" href="#top"></a>
+        </div>
+   		<ul id="primaryNav">
+			<li class="active"><a href="index.html"><span>CURRENT </span>DEALS</a></li>
+				<li><a href="#"><span>POPULAR </span>DESTINATIONS</a>
+				<ul>
+					<li><a href="index.html">Asia</a></li>
+					<li><a href="index.html">Caribbean</a></li>
+					<li><a href="index.html">Central America</a></li>
+					<li><a href="index.html">Europe</a></li>
+				</ul>
+			</li>
+			<li><a href="#"><span>FAVORITE </span>RESORTS</a>
+				<ul>
+					<li><a href="index.html">Hotel Maroma</a></li>
+					<li><a href="index.html">Atlantis</a></li>
+				</ul>
+			</li>
+			<li><a href="index.html"><span>AWESOME </span>CRUISES</a></li>
+		</ul>
+	</nav>
 </body>
 </html>
