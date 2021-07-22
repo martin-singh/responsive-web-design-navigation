@@ -4,14 +4,13 @@
 
 @import "partials/small-default";
 
-@import "partials/mobilemenu";
 
-// 35em is also 560px (if basefont is 16px)
-@media only screen and (min-width: 35em) {
+//35 is also 560px (if basefont is 16px)
+@media only screen and (min-width: 35rem) {
 	@import "partials/medium";
 }
 
-// 64em is also 1028px (if basefont is 16px)
-@media only screen and (min-width: 64.0625em) {
+//64 is also 1024px (if basefont is 16px)
+@media only screen and (min-width: 64rem) {
 	@import "partials/large";
 } 

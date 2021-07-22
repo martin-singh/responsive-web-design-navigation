@@ -1,6 +1,23 @@
+//---------- BODY ----------
+body {
+	grid-template-areas: 
+		"header header"
+		"links content"
+		"footer footer";
+	grid-template-columns: 9rem auto;
+} // end body
 
+//---------- NAV ----------
+div#navBar, 
+nav div a.hamburgerClose {display: none;}
 
-/* MAIN  */
+nav {
+	height: auto;
+
+	ul li a {text-align: right;}
+} // end nav
+
+//---------- MAIN ----------
 main {
 	h1 {font-size: 5rem;}
 	.box {font-size: 2rem;}
