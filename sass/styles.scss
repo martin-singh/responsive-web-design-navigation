@@ -4,13 +4,22 @@
 
 @import "partials/small-default";
 
+//small screen navigation starts here
+@media only screen and (max-width: 63.9375em) {
+	@import "partials/small-nav";
+}
 
-//35 is also 560px (if basefont is 16px)
-@media only screen and (min-width: 35rem) {
+//medium screen navigation starts here
+@media only screen and (min-width: 35em) and (max-width: 63.9375em) {
+	@import "partials/medium-nav";
+}
+
+//35em is also 560px (if basefont is 16px)
+@media only screen and (min-width: 35em) {
 	@import "partials/medium";
 }
 
-//64 is also 1024px (if basefont is 16px)
-@media only screen and (min-width: 64rem) {
+//64em is also 1028px (if basefont is 16px)
+@media only screen and (min-width: 64em) {
 	@import "partials/large";
 } 

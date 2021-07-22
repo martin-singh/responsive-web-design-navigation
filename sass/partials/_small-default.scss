@@ -4,82 +4,21 @@ html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
 // Apply a natural box layout model to all elements
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-//---------- BODY ----------
+/* BODY  */
 body {
 	font-family: $defaultFont;
 	font-size: 16px;
-	display: grid;
-	grid-template-areas: 
-		"hamburger"
-		"header"
-		"content"
-		"footer"
-		"links";
+	margin-bottom: 50px;
 }
-
 
 //---------- HEADER ----------
 header {
-	grid-area: header;
 	h1 {display: none;}
 	img {padding: 1rem 0 .5rem 2%; display: block;}
-	border-bottom:solid 1px $primaryColor;
 } // end header
-
-
-//---------- NAVIGATION ----------
-.hamburger {
-	grid-area: hamburger;
-	display: block;
-	width: 7rem;
-	height: 2.75rem;
-	background-repeat: no-repeat;
-	background-position: 2vw center;
-}
-
-a.hamburgerOpen {
-	@extend .hamburger;
-	background-image: url("../../images/menuOpenWhite.png");
-}
-
-a.hamburgerClose {
-	@extend .hamburger;
-	background-image: url("../../images/menuCloseWhite.png");
-}
-
-div#navBar {
-	background-color: $menuColor;
-}
-
-nav {
-	grid-area: links;
-	width: 100%;
-	height: 100vh;
-	background-color: $menuColor;
-
-	ul li a {
-		display: block;
-		width: 100%;
-		border-bottom: solid 1px rgba(0,0,0,0.3);
-		padding: .75rem $gutter;
-		color: rgba(255,255,255,0.9);
-		text-decoration: none;
-		transition: background 0.5s ease;
-	}
-
-	ul li:first-child a {border-top: 1px solid rgba(0,0,0,0.3);}
-
-	ul li.active a {
-		background-color: rgba(255,255,255,0.4);
-		color: #000;
-	}
-
-	ul li a:hover {background-color: rgba(0,0,0,0.3);}
-}
 
 //---------- MAIN ----------
 main {
-	grid-area: content;
 	padding: 1rem 0;
 	h1 {font-size: 2.5rem; color: $secondaryColor; padding-left: 2%;}
 	figure.w100 img {width: 100%;}
@@ -99,7 +38,6 @@ main {
 
 //---------- FOOTER ----------
 footer {
-	grid-area: footer;
 	color: $primaryColor;
 	padding: 2rem 0;
 	text-align: center;

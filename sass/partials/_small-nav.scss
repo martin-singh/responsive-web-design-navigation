@@ -1,0 +1,66 @@
+//---------- NAVIGATION ----------
+nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: $primaryColor;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+
+    ul li {
+        float: left;
+        width: 25%;
+    }
+
+    ul li a {
+        display: block;
+        width: 100%;
+        height: 50px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: auto 36px;
+    }
+
+    ul li:nth-child(1) a {background-image: url("../../images/icon_deals.png");}
+    ul li:nth-child(2) a {background-image: url("../../images/icon_destination.png");}
+    ul li:nth-child(3) a {background-image: url("../../images/icon_resort.png");}
+    ul li:nth-child(4) a {background-image: url("../../images/icon_cruise.png");}
+
+    ul li:hover a {
+        background-color: $menuColor;
+    }
+
+    ul li a span {display: none;}
+
+    ul li ul {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 99;
+    }
+
+    ul li ul li {
+        float: none;
+        width: 100%;
+    }
+
+    ul li ul li a {
+        width: 90%;
+        height: auto;
+        background-image: none !important;
+        background-color: $menuColor;
+        color: #fff;
+        text-decoration: none;
+        margin: .5rem 5%;
+        border-radius: 5px;
+        padding: .7rem .4rem;
+        box-shadow: 0 2px 1px rgba(0, 0, 0, 0.5);
+    }
+
+    ul li ul li a:hover {background-color: darken($menuColor, 10%);}
+
+    ul li:hover ul {
+        bottom: 50px;
+    }
+} // end navigation
+
