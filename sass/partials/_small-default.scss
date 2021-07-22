@@ -8,19 +8,78 @@ html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
 body {
 	font-family: $defaultFont;
 	font-size: 16px;
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-areas: 
+		"myNavigation"
+		"myHeader"
+		"myContent"
+		"myFooter";
 }
-
 
 //--------------- HEADER ---------------
 header {
-	margin-top: 44px;
+	grid-area: myHeader;
 	h1 {display: none;}
 	img {padding: 1rem 0 .5rem 2%; display: block;}
 } // end header
 
+//********** INDEX.HTML V1 **********
+/*header {
+	margin-top: 44px;
+	h1 {display: none;}
+	img {padding: 1rem 0 .5rem 2%; display: block;}
+} // end header*/
+
 
 //--------------- NAVIGATION ---------------
 nav {
+	grid-area: myNavigation;
+	background-color: $menuColor;
+
+	button {
+		margin: 3px 2%;
+		border: 1px solid rgba(0, 0, 0, 0.3);
+		border-radius: 5px;
+		background-color: rgba(0, 0, 0, 0.2);
+		color: #fff;
+		font-size: 1.5rem;
+		width: 3.5rem;
+	}
+
+	ul {
+		overflow: hidden;
+	}
+
+	ul li a {
+		display: block;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+		padding: .6rem 2%;
+		width: 100%;
+		color: #fff;
+		text-decoration: none;
+	}
+	ul li ul li a {
+		padding-left: 8%;
+	} // nested anchors
+	ul li.active > a {
+		background-color: #000;
+	}
+	ul li a:hover {
+		background-color: darken($menuColor, 10%);
+	}
+
+	ul.closed {max-height: 0;}
+	ul.open {
+		max-height: 31rem;
+		transition: max-height 0.5s;
+		-webkit-transition: max-height 0.5s;
+		-moz-transition: max-height 0.5s;
+	}
+} // end nav
+
+//********** INDEX.HTML V1 **********
+/*nav {
 	background-color: $menuColor;
 	position: absolute;
 	top: 0;
@@ -61,10 +120,11 @@ nav {
 	ul.closed { // generated and used by the JS
 		display: none;
 	}
-} // end nav
+} // end nav */
 
 //--------------- MAIN ---------------
 main {
+	grid-area: myContent;
 	padding: 1rem 0;
 	h1 {font-size: 2.5rem; color: $secondaryColor; padding-left: 2%;}
 	figure.w100 img {width: 100%;}
@@ -84,6 +144,7 @@ main {
 
 //--------------- FOOTER ---------------
 footer {
+	grid-area: myFooter;
 	color: $primaryColor;
 	padding: 2rem 0;
 	text-align: center;
